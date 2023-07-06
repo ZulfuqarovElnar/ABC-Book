@@ -6,6 +6,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    font-family: 'Roboto', sans-serif;
+}   
 
 ul {
     list-style: none;
@@ -18,8 +21,9 @@ a {
 /* * Navbar stil ayarları * */
 nav {
     width: 100%;
-    height: 90px;
-    padding: 20px 0;
+    min-height: 90px;
+    padding-top: 20px;
+    background-color: #fff;
 }
 
 .navbar {
@@ -30,12 +34,18 @@ nav {
     padding: 0 12px;
     margin: 0 auto;
     gap: 10px;
+    
+}
+
+.nav-logo{
+    padding: 5px 0;
+    cursor: pointer;
 }
 
 .navbar-card {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 10px;
     flex-wrap: wrap;
 }
@@ -46,16 +56,16 @@ nav {
 
 .navbar-card form input {
     width: 400px;
-    padding: 10px 20px;
+    padding: 15px 20px;
     border-radius: 25px;
     outline: none;
-    border: 1px solid #333;
+    border: 1px solid #3333338e;
 }
 
 .navbar-card form i {
     position: absolute;
     right: 20px;
-    top: 10px;
+    top: 15px;
     color: #ff1616;
     cursor: pointer;
 }
@@ -66,12 +76,18 @@ nav {
     width: 100%;
     color: #454e6d;
     gap: 33px;
-    justify-content: flex-end; /* Sağa hizalama */
+    justify-content: flex-end;
 }
 
 .nav-link ul li {
-    padding: 10px 0;
+    padding: 15px 0;
     text-align: center;
+}
+.nav-link ul li a {
+    color: #232f55;
+}
+.nav-link ul li a:hover{
+    color: #ff1616;
 }
 
 .nav-link ul li a img {
@@ -99,13 +115,97 @@ nav {
 .sign-btn .button div {
     padding: 10px;
     border-radius: 28px;
-    transition: background-position 0.5s;
+    transition: background-position 0.5s ease-in-out;
 }
 
 .sign-btn .button:hover div {
     background-size: 200% auto;
     background-position: left center;
 }
+            /* * Nav-Menu * */
+header {
+    width: 100%;
+    height: 64px;
+    background-color: #fef4f4;
+}
+
+header .nav-menu {
+    display: flex;
+    justify-content: center;
+    height: 0;
+    padding-top: 25px;
+}
+
+.nav-menu ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu ul li {
+    padding: 0px 20px 40px;
+    position: relative;
+}
+.nav-menu  ul li a {
+    color: #232f55;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.4s;
+}
+
+
+.nav-menu ul li:hover > a {
+    color: #ff1616;
+}
+.nav-menu ul li:hover{
+    cursor: pointer;
+}
+.nav-pages ul {
+    display: none;
+    position: absolute;
+    top: 95%;
+    left: 0;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.nav-menu ul li:hover > ul {
+    display: inherit;
+}
+
+.nav-pages ul li {
+    width: 170px;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+}
+.nav-pages ul li:hover{
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.nav-pages ul li:hover a{
+    color: #ff1616;
+}
+.nav-pages ul li a {
+    color: #0b1c39;
+    font-weight: 600;
+    font-size: 14px;
+}
+.nav-menu ul li a i{
+    display: none;
+}
+        /* * Nav-Menu hamburger * */
+.nav-header {
+    display: none;
+}
+.nav-toggle {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
 
 /* Responsive ayarlar */
 @media (max-width: 768px) {
@@ -120,11 +220,103 @@ nav {
         width: 100%;
         padding-right: 60px;
     }
-    .navbar-card form input::placeholder {
-        font-size: 12px;
-        }
     .nav-link ul {
         gap: 20px;
         justify-content: center;
+    }
+
+        /* * Nav-Menu Hamburger * */
+    header{
+        background-color: #4c4c4c;
+    }
+    header .nav-menu {
+        justify-content: flex-start;
+        padding-top: 60px;
+        height: auto;
+    }
+    .nav-header {
+        display: inherit;
+        padding: 1rem;
+        position: absolute;
+        right: 0;
+    }
+    header .nav-menu ul ul{
+        height: auto;
+    }
+    .nav-menu ul{
+        width: 100%;
+        flex-direction: column;
+        background-color: #4c4c4c;
+        padding: 0px;
+        height: 0;
+        overflow: hidden;
+    }
+    .nav-menu ul li{
+        padding: 7px 10px;
+        margin: 5px 10px;
+        border-radius: 7px;
+    }
+    .nav-menu ul li:hover{
+        background-color: #cccccc;
+    }
+    .nav-menu ul li a{
+        color: #fff;
+    }
+    .nav-menu ul li a i{
+        display: inherit;
+    }
+    .nav-pages {
+        height: 30px;
+        overflow: hidden;
+    }
+    .nav-pages ul {
+        padding: 10px 0px;
+        position: relative;
+        width: 100%;
+        top: 0%;
+        margin-top: 10px;
+        background-color: #4c4c4c;
+        border-radius: 0;
+        height: 0;
+        overflow: hidden;
+        z-index: 100;
+    }
+    .nav-pages ul li a{
+        color: #fff;
+    }
+    .nav-pages ul li{
+        width: 97%;
+        padding: 6px 10px ;
+    }
+    .nav-toggle{
+        padding: 3px 10px;
+        background-color: #0b1c39;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+    }
+    .nav-menu ul > li:nth-child(4){
+        position: relative;
+        padding: 7px 0 0;
+        border: none;
+    }
+    .nav-menu  ul > li:nth-child(4) > a{
+        display: flex;
+        padding: 0 500px 0 10px;
+        position: relative;
+        gap: 5px;
+        top: 0px;
+    }
+    .nav-pages ul > li:nth-child(4) {
+        position: relative;
+        top: 0;
+        padding-bottom: 5px;
+    }
+    header .show-links{
+        height: auto;
+        transition: all 0.3s ease;
+    }  
+    .show-page{
+        height: auto;
     }
 }
