@@ -13,7 +13,7 @@ pages.addEventListener('click', () =>{
     navPageEl.classList.toggle('show-page');
 });
 
-        // *Sliders
+        // * Sliders Automatically Added
 const sliders = document.querySelectorAll('.slider');
 
 const circleButtons = document.querySelectorAll('.slider-circle-btn li button');
@@ -39,7 +39,7 @@ function activateNextSlide() {
 }
 
 function startAutoSlide() {
-  autoSlideInterval = setInterval(activateNextSlide, 9000);
+    autoSlideInterval = setInterval(activateNextSlide, 9000);
 }
 
 function stopAutoSlide() {
@@ -65,3 +65,13 @@ button.addEventListener('click', () => {
 });
 
 startAutoSlide();
+
+    // * Header-Navbar Scroll
+    window.addEventListener('scroll', function() {
+        var navbar = document.querySelector('.header');
+        if (window.scrollY >= 500) {
+            navbar.classList.add('fixed');
+        } else {
+            navbar.classList.remove('fixed');
+        }
+    });
