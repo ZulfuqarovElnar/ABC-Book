@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
+    <title>Book Shop</title>
+=======
     <title>Document</title>
+>>>>>>> 455d8c9e8601a55f8dfd5ed06a3c6c5c4aceb8f0
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -69,6 +73,334 @@
         </div>
     </section>
 
+<<<<<<< HEAD
+            <!-- * Book Select -->
+    <section class="book-section">
+        <div class="book-grid">
+                    <!-- * Book Filter -->
+            <div class="book-filter">
+                <div class="book-genres">
+                    <h4>Filter by Generes</h4>
+                    <div>
+                        <label class="book-label">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            History
+                        </label>
+                        <label class="book-label">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            Horror - Thriller
+                        </label>
+                        <label class="book-label">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            Love Stories
+                        </label>
+                        <label class="book-label">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            Science Fiction
+                        </label>
+                        <label class="book-label">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            Biography
+                        </label>
+                    </div>
+                </div>
+                        <!-- * Filter Price Bar -->
+                <div class="wrapper-price">
+                    <h4>Filter by Price</h4>
+                    <div class="filter-price">
+                        <div class="slider-track"></div>
+                        <input type="range" min="0" max="1000" value="0" id="slider-1" oninput="slideOne()">
+                        <input type="range" min="0" max="1000" value="1000" id="slider-2" oninput="slideTwo()">
+                    </div>
+                    <div class="values">
+                        <span id="range1">
+                            0
+                        </span> $
+                        <span> to </span>
+                        <span id="range2">
+                            100
+                        </span> $
+                    </div>
+                </div>
+                <div class="book-rating">
+                    <span></span>
+                    <ul>
+                        <li>Filter by Rating</li>
+                        <li>5 Star Rating</li>
+                        <li>4 Star Rating</li>
+                        <li>3 Star Rating</li>
+                        <li>2 Star Rating</li>
+                        <li>1 Star Rating</li>
+                    </ul>
+                </div>
+                <div class="book-publisher">
+                    <h4>Filter by Publisher</h4>
+                    <div>
+                        <label class="book-label">
+                            Green Publications
+                            <input type="checkbox">
+                        </label>
+                        <label class="book-label">
+                            Anondo Publications
+                            <input type="checkbox">
+                        </label>
+                        <label class="book-label">
+                            Rinku Publications
+                            <input type="checkbox">
+                        </label>
+                        <label class="book-label">
+                            Sheba Publications
+                            <input type="checkbox">
+                        </label>
+                        <label class="book-label">
+                            Red Publications
+                            <input type="checkbox">
+                        </label>
+                    </div>
+                </div>
+                <div class="book-author">
+                    <h4>Filter by Author Name</h4>
+                    <div>
+                        <label class="book-label">
+                            Buster Hyman
+                            <input type="checkbox">
+                        </label>
+                        <label class="book-label">
+                            Phil Harmonic
+                            <input type="checkbox">
+                        </label>
+                        <label class="book-label">
+                            Cam L. Toe
+                            <input type="checkbox">
+                        </label>
+                        <label class="book-label">
+                            Otto Matic
+                            <input type="checkbox">
+                        </label>
+                        <label class="book-label">
+                            Juan Annatoo
+                            <input type="checkbox">
+                        </label>
+                    </div>
+                </div>
+            </div>
+                    <!-- * Book Cards -->
+            <div class="book-cards">
+                <div>
+                    <span></span>
+                    <ul>
+                        <li>Browse by popularity</li>
+                        <li>Name</li>
+                        <li>NEW</li>
+                        <li>Old</li>
+                        <li>Price</li>
+                    </ul>
+                </div>
+                <div class="book-shop">
+                    <div class="book-card">
+                        <img src="images/best_selling2.jpg" alt="">
+                        <h3>Moon Dance</h3>
+                        <p>J. R Rain</p>
+                        <div class="book-star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star-half-stroke"></i>
+                        </div>
+                        <div>
+                            <p>(<span>120</span> Review)</p>
+                            <span>$50</span>
+                        </div>
+                    </div>
+                    <div class="book-card">
+                        <img src="images/best_selling4.jpg" alt="">
+                        <h3>Moon Dance</h3>
+                        <p>J. R Rain</p>
+                        <div class="book-star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star-half-stroke"></i>
+                        </div>
+                        <div>
+                            <p>(<span>120</span> Review)</p>
+                            <span>$50</span>
+                        </div>
+                    </div>
+                    <div class="book-card">
+                        <img src="images/best_selling6.jpg" alt="">
+                        <h3>Moon Dance</h3>
+                        <p>J. R Rain</p>
+                        <div class="book-star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star-half-stroke"></i>
+                        </div>
+                        <div>
+                            <p>(<span>120</span> Review)</p>
+                            <span>$50</span>
+                        </div>
+                    </div>
+                    <div class="book-card">
+                        <img src="images/best_selling7.jpg" alt="">
+                        <h3>Moon Dance</h3>
+                        <p>J. R Rain</p>
+                        <div class="book-star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star-half-stroke"></i>
+                        </div>
+                        <div>
+                            <p>(<span>120</span> Review)</p>
+                            <span>$50</span>
+                        </div>
+                    </div>
+                    <div class="book-card">
+                        <img src="images/best_selling8.jpg" alt="">
+                        <h3>Moon Dance</h3>
+                        <p>J. R Rain</p>
+                        <div class="book-star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star-half-stroke"></i>
+                        </div>
+                        <div>
+                            <p>(<span>120</span> Review)</p>
+                            <span>$50</span>
+                        </div>
+                    </div>
+                    <div class="book-card">
+                        <img src="images/best_selling9.jpg" alt="">
+                        <h3>Moon Dance</h3>
+                        <p>J. R Rain</p>
+                        <div class="book-star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star-half-stroke"></i>
+                        </div>
+                        <div>
+                            <p>(<span>120</span> Review)</p>
+                            <span>$50</span>
+                        </div>
+                    </div>
+                    <div class="book-card">
+                        <img src="images/best_selling2.jpg" alt="">
+                        <h3>Moon Dance</h3>
+                        <p>J. R Rain</p>
+                        <div class="book-star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star-half-stroke"></i>
+                        </div>
+                        <div>
+                            <p>(<span>120</span> Review)</p>
+                            <span>$50</span>
+                        </div>
+                    </div>
+                    <div class="book-card">
+                        <img src="images/best_selling4.jpg" alt="">
+                        <h3>Moon Dance</h3>
+                        <p>J. R Rain</p>
+                        <div class="book-star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star-half-stroke"></i>
+                        </div>
+                        <div>
+                            <p>(<span>120</span> Review)</p>
+                            <span>$50</span>
+                        </div>
+                    </div>
+                    <div class="book-card">
+                        <img src="images/best_selling6.jpg" alt="">
+                        <h3>Moon Dance</h3>
+                        <p>J. R Rain</p>
+                        <div class="book-star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star-half-stroke"></i>
+                        </div>
+                        <div>
+                            <p>(<span>120</span> Review)</p>
+                            <span>$50</span>
+                        </div>
+                    </div>
+                    <div class="book-card">
+                        <img src="images/best_selling7.jpg" alt="">
+                        <h3>Moon Dance</h3>
+                        <p>J. R Rain</p>
+                        <div class="book-star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star-half-stroke"></i>
+                        </div>
+                        <div>
+                            <p>(<span>120</span> Review)</p>
+                            <span>$50</span>
+                        </div>
+                    </div>
+                    <div class="book-card">
+                        <img src="images/best_selling8.jpg" alt="">
+                        <h3>Moon Dance</h3>
+                        <p>J. R Rain</p>
+                        <div class="book-star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star-half-stroke"></i>
+                        </div>
+                        <div>
+                            <p>(<span>120</span> Review)</p>
+                            <span>$50</span>
+                        </div>
+                    </div>
+                    <div class="book-card">
+                        <img src="images/best_selling9.jpg" alt="">
+                        <h3>Moon Dance</h3>
+                        <p>J. R Rain</p>
+                        <div class="book-star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star-half-stroke"></i>
+                        </div>
+                        <div>
+                            <p>(<span>120</span> Review)</p>
+                            <span>$50</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+=======
+>>>>>>> 455d8c9e8601a55f8dfd5ed06a3c6c5c4aceb8f0
     <script src="category.js"></script>
 </body>
 </html>
