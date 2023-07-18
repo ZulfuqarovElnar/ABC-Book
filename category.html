@@ -123,14 +123,17 @@
                     </div>
                 </div>
                 <div class="book-rating">
-                    <span></span>
+                    <div>
+                        <span id="filter-heading">Filter by Rating</span>
+                        <span><i class="fa-solid fa-chevron-down"></i></span>
+                    </div>
                     <ul>
-                        <li>Filter by Rating</li>
-                        <li>5 Star Rating</li>
-                        <li>4 Star Rating</li>
-                        <li>3 Star Rating</li>
-                        <li>2 Star Rating</li>
-                        <li>1 Star Rating</li>
+                        <li onclick="filterBooks('all')" class="selected">Filter by Rating</li>
+                        <li onclick="filterBooks(5)">5 Star Rating</li>
+                        <li onclick="filterBooks(4)">4 Star Rating</li>
+                        <li onclick="filterBooks(3)">3 Star Rating</li>
+                        <li onclick="filterBooks(2)">2 Star Rating</li>
+                        <li onclick="filterBooks(1)">1 Star Rating</li>
                     </ul>
                 </div>
                 <div class="book-publisher">

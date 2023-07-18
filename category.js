@@ -58,3 +58,37 @@ function fillColor(){
     sliderTrack.style.background = `linear-gradient(to right, #dadae5 ${percent1}% , #d63384 ${percent1}% , #d63384 ${percent2}%, #dadae5 ${percent2}%)`;
 }
 
+            // * Filter Rating
+const bookRating = document.querySelector('.book-rating ul');
+const ratingBtn = document.querySelector('.book-rating');
+const ratingIcon = document.querySelector('.book-rating span i');
+
+ratingBtn.addEventListener('click', () =>{
+    bookRating.classList.toggle('active-ul');
+    ratingIcon.classList.toggle('activeicon')
+})
+function filterBooks(rating) {
+    const liElements = document.querySelectorAll(".book-rating li");
+    liElements.forEach((li) => {
+        li.classList.remove("selected");
+    });
+    const clickedLi = event.currentTarget;
+    clickedLi.classList.add("selected");
+
+    const selectedText = clickedLi.textContent;
+
+    const filterHeading = document.getElementById("filter-heading");
+    filterHeading.textContent = selectedText;
+
+    localStorage.setItem("selectedRating", rating);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const storedRating = localStorage.getItem("selectedRating");
+
+    const ratingToSelect = storedRating ? storedRating : "all";
+    
+    const liToSelect = document.querySelector(`.book-rating li[onclick="filterBooks(${ratingToSelect})"]`);
+
+    liToSelect.click();
+});
