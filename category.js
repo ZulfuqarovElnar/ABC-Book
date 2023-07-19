@@ -84,11 +84,42 @@ function filterBooks(rating) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const storedRating = localStorage.getItem("selectedRating");
-
     const ratingToSelect = storedRating ? storedRating : "all";
     
     const liToSelect = document.querySelector(`.book-rating li[onclick="filterBooks(${ratingToSelect})"]`);
+
+    liToSelect.click();
+});
+        // * Book-Pop
+const bookPop = document.querySelector('.book-pop ul');
+const popBtn = document.querySelector('.book-pop');
+const popIcon = document.querySelector('.book-pop span i');
+
+popBtn.addEventListener('click', () =>{
+    bookPop.classList.toggle('pop-ul');
+    popIcon.classList.toggle('popicon')
+})
+
+function filterPops(pop) {
+    const liPops = document.querySelectorAll(".book-pop li");
+    liPops.forEach((li) => {
+        li.classList.remove("selected");
+    });
+    const clickedLi = event.currentTarget;
+    clickedLi.classList.add("selected");
+
+    const selectedText = clickedLi.textContent;
+
+    const filterPop = document.getElementById("filter-pop");
+    filterPop.textContent = selectedText;
+
+    localStorage.setItem("selectedPop", pop);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const popToSelect = storedPop ? storedPop : "all";
+    
+    const liToSelect = document.querySelector(`.book-pop li[onclick="filterPops(${popToSelect})"]`);
 
     liToSelect.click();
 });

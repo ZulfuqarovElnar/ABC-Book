@@ -588,10 +588,10 @@ header .nav-menu {
     border: 1px solid rgba(0, 0, 0, 0.1);
     cursor: pointer;
 }
-.book-rating div > span {
+.book-rating div > span, .book-pop div > span {
     color: #232f55;
 }
-.book-rating ul {
+.book-rating ul, .book-pop ul{
     display: none;
     position: absolute;
     max-width: 363px;
@@ -602,17 +602,17 @@ header .nav-menu {
     margin-top: 3px;
     z-index: 200;
 }
-.book-rating ul li {
+.book-rating ul li, .book-pop ul li{
     padding: 11px 48px 11px 36px;
 }
-.book-rating ul li:hover{
+.book-rating ul li:hover, .book-pop ul li:hover{
     background-color: #f6f6f6;
     cursor: pointer;
 }
-.book-rating .active-ul{
+.book-rating .active-ul, .book-pop .pop-ul{
     display: block;
 }
-.book-rating .activeicon{
+.book-rating .activeicon, .book-pop .popicon{
     transform: rotate(180deg);
 }
 .selected {
@@ -621,11 +621,43 @@ header .nav-menu {
     font-weight: 600;
 }
 
-.book-rating ul:hover .selected {
+.book-rating ul:hover .selected, .book-pop ul:hover .selected{
     background-color: #fff;
 }
 .selected:hover{
     background-color: #f6f6f6;
+}
+
+            /* * Book Cards * */
+.book-cards{
+    max-width: 880px;
+    width: 100%;
+}
+.book-pop{
+    width: 880px;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+.book-pop div{
+    max-width: 293px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 11px 19px 11px 18px;
+    border-radius: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+.book-pop ul{
+    max-width: 293px;
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    top: 43px;
+    right: 1px;
+    color: #232f55;
 }
             /* * Responsive ayarlar * */
 @media (max-width: 768px) {
