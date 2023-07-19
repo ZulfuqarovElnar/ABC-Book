@@ -199,14 +199,17 @@
             </div>
                     <!-- * Book Cards -->
             <div class="book-cards">
-                <div>
-                    <span></span>
+                <div class="book-pop">
+                    <div>
+                        <span id="filter-pop">Browse by popularity</span>
+                        <span><i class="fa-solid fa-chevron-down"></i></span>
+                    </div>
                     <ul>
-                        <li>Browse by popularity</li>
-                        <li>Name</li>
-                        <li>NEW</li>
-                        <li>Old</li>
-                        <li>Price</li>
+                        <li onclick="filterPops(all)">Browse by popularity</li>
+                        <li onclick="filterPops(4)">Name</li>
+                        <li onclick="filterPops(3)">NEW</li>
+                        <li onclick="filterPops(2)">Old</li>
+                        <li onclick="filterPops(1)">Price</li>
                     </ul>
                 </div>
                 <div class="book-shop">
