@@ -83,13 +83,6 @@ function filterBooks(rating) {
     localStorage.setItem("selectedRating", rating);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    const ratingToSelect = storedRating ? storedRating : "all";
-    
-    const liToSelect = document.querySelector(`.book-rating li[onclick="filterBooks(${ratingToSelect})"]`);
-
-    liToSelect.click();
-});
         // * Book-Pop
 const bookPop = document.querySelector('.book-pop ul');
 const popBtn = document.querySelector('.book-pop');
@@ -115,11 +108,3 @@ function filterPops(pop) {
 
     localStorage.setItem("selectedPop", pop);
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-    const popToSelect = storedPop ? storedPop : "all";
-    
-    const liToSelect = document.querySelector(`.book-pop li[onclick="filterPops(${popToSelect})"]`);
-
-    liToSelect.click();
-});
