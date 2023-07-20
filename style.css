@@ -416,8 +416,9 @@ header .nav-menu {
 
 .book-section {
     width: 100%;
-    height: 2359px;
+    height: 1989px;
     padding: 50px 0;
+    overflow: auto;
 }
 
 .book-grid {
@@ -425,12 +426,12 @@ header .nav-menu {
     width: 100%;
     padding: 0 12px;
     display: grid;
-    grid-template-columns: 440px 840px;
+    grid-template-columns: 440px repeat(auto-fit, minmax(220px,1fr)) ;
     margin: 0 auto;
 }
             /* * Book Filter */
 .book-filter {
-    max-width: 440px;
+    max-width: 428px;
     width: 100%;
     height: 1025px;
     padding: 30px 31px 30px 42px;
@@ -458,7 +459,6 @@ header .nav-menu {
     cursor: pointer;
     height: 0;
     width: 0;
-    
 }
 .book-genres div label .checkmark {
     position: relative;
@@ -501,7 +501,8 @@ header .nav-menu {
 
 .wrapper-price{
     position: relative;
-    width: 305px;
+    max-width: 305px;
+    width: 100%;
     background-color: #ffffff;
     border-radius: 10px;
 }
@@ -634,14 +635,16 @@ header .nav-menu {
     width: 100%;
 }
 .book-pop{
-    width: 880px;
+    max-width: 880px;
+    width: 100%;
     position: relative;
     display: flex;
     justify-content: flex-end;
     margin-bottom: 30px;
+    padding: 0 20px;
 }
 .book-pop div{
-    max-width: 293px;
+    max-width: 253px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -651,14 +654,117 @@ header .nav-menu {
     cursor: pointer;
 }
 .book-pop ul{
-    max-width: 293px;
+    max-width: 253px;
     width: 100%;
     height: 200px;
     position: absolute;
     top: 43px;
-    right: 1px;
+    right: 17.5px;
     color: #232f55;
 }
+            /* * Book Shop * */
+.book-shop{
+    max-width: 880px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px,1fr));
+    place-items: center;
+}
+.book-body{
+    padding: 0 12px 30px;
+}
+.book-card{
+    width: 198px;
+    height: 475px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.7s ease;
+}
+.book-card:hover{
+    cursor: pointer;
+    box-shadow: 2px 8px 10px rgb(214, 51, 132, 0.2);
+}
+.book-card img{
+    width: 196px;
+    height: 295px;
+}
+.book-card h3{
+    color: #1a1a1a;
+    padding: 20px 20px 8px;
+    font-size: 20px;
+}
+.book-card:hover h3{
+    color: #ff1616;
+    cursor: pointer;
+}
+.book-card > p{
+    color: #9498A7;
+    font-size: 14px;
+    padding: 14px 20px 15px;
+}
+.book-star{
+    padding: 10px 20px 2px;
+    color: #ff7b2e;
+    font-size: 13.5px;
+}
+.book-review {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px 2px;
+}
+.book-review p {
+    font-size: 14px;
+    color: #9498A7;
+    padding-top: 8px;
+}
+.book-review p span {
+    color: #ff7b2e;
+    font-size: 12px;
+}
+.book-review > span {
+    font-size: 22px;
+    color: #ff1616;
+    margin-top: -8px;
+}
+.book-cards .shop-btn {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.book-shop-btn {
+    max-width: 185px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 35px;
+    position: relative;
+    overflow: hidden;
+}
+
+.book-shop-btn div {
+    max-width: 185px;
+    width: 100%;
+    height: 50px;
+    padding: 17px 39px;
+    border-radius: 30px;
+    border: 1px solid #ff1616;
+    margin: 0 auto;
+    color: #ff1616;
+    background: linear-gradient(to top, #fff 50%, #ff1616 50%);
+    background-size: 100% 200%;
+    background-position: bottom;
+    transition: background-position 0.5s ease-in-out;
+}
+
+.book-shop-btn:hover div {
+    background-position: top;
+    cursor: pointer;
+    color: #fff;
+}
+
+
+
+
+
             /* * Responsive ayarlar * */
 @media (max-width: 768px) {
     .navbar{
@@ -776,9 +882,16 @@ header .nav-menu {
         width: 100%;
         font-size: 45px;
     }
+    .book-grid{
+        grid-template-columns: repeat(auto-fit, minmax(380px,1fr));
+        place-items: center;
+    }
 }
 @media (max-width: 400px) {
     .slider-card h1 {
         font-size: 35px;
+    }
+    .book-grid{
+        grid-template-columns: repeat(auto-fit, minmax(270px,1fr));
     }
 }
