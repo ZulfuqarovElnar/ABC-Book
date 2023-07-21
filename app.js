@@ -69,9 +69,26 @@ startAutoSlide();
     // * Header-Navbar Scroll
     window.addEventListener('scroll', function() {
         var navbar = document.querySelector('.header');
+        var fixedIcon = document.querySelector('.fixed-icon');
         if (window.scrollY >= 500) {
             navbar.classList.add('fixed');
+            fixedIcon.classList.add('active-fixed');
         } else {
             navbar.classList.remove('fixed');
+            fixedIcon.classList.remove('active-fixed');
         }
     });
+    
+            // * Scroll-Btn-Top
+document.addEventListener("DOMContentLoaded", function() {
+    const scrollButton = document.getElementById("scrollBtn");
+
+    scrollButton.addEventListener("click", scrollToTop);
+});
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
