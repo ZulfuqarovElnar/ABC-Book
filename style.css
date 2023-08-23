@@ -902,6 +902,87 @@ footer{
 .footer-mt{
     margin-top: 61px;
 }
+        /* * Best Selling * */
+.best-section{
+    width: 100%;
+    height: 750px;
+    padding: 95px 12px 100px;
+    background-color: #fef4f4;
+}
+.best-heading{
+    max-width: 1320px;
+    width: 100%;
+    margin: 0 auto 50px;
+}
+.best-heading h1{
+    font-size: 30px;
+    color: #1a1a1a;
+    text-align: center;
+}
+.best-body{
+    max-width: 1320px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    overflow-x: auto;
+}
+.best-flex{
+    max-width: 1240px;
+    width: 100%;
+    height: 530px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    gap: 20px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.best-flex::-webkit-scrollbar {
+    display: none;
+}
+.best-left {
+    width: 60px;
+}
+.best-right {
+    width: 60px;
+}
+.best-left, .best-right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.best-left i, .best-right i{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 30px;
+    color: #4c4c4c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.best-left i:hover, .best-right i:hover{
+    cursor: pointer;
+    color: #ff1616;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.book-card {
+    opacity: 0;
+    transform: translateY(20px); 
+    animation: fadeIn 0.5s ease forwards; 
+}
 
             /* * Responsive ayarlar * */
 @media (max-width: 768px) {

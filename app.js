@@ -92,3 +92,87 @@ function scrollToTop() {
         behavior: "smooth"
     });
 }
+
+const bookContainer = document.getElementById("bookContainer");
+const cardWidth = 218; 
+const cards = Array.from(bookContainer.getElementsByClassName("best-card"));
+const autoScrollDelay = 3000; 
+const pauseAfterLastCard = 3000; 
+
+let currentIndex = 0;
+let isAutoScrolling = false;
+let autoScrollInterval;
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+function scrollCards(direction) {
+    currentIndex += direction;
+    if (currentIndex < 0) {
+        currentIndex = cards.length - 1;
+    } else if (currentIndex >= cards.length) {
+        currentIndex = 0;
+    }
+
+    const offset = currentIndex * cardWidth;
+    bookContainer.scrollTo({ left: offset, behavior: "smooth" });
+}
+
+function startAutoScroll() {
+    if (!isAutoScrolling) {
+        isAutoScrolling = true;
+        autoScrollInterval = setInterval(() => {
+            scrollCards(1); 
+        }, autoScrollDelay);
+    }
+}
+
+function stopAutoScroll() {
+    isAutoScrolling = false;
+    clearInterval(autoScrollInterval); 
+}
+
+function updateAutoScroll() {
+    if (isAutoScrolling) {
+        stopAutoScroll();
+        startAutoScroll();
+    }
+}
+
+function pauseAfterLast() {
+    if (isAutoScrolling) {
+        stopAutoScroll();
+        setTimeout(startAutoScroll, pauseAfterLastCard); 
+    }
+}
+
+// Sayfa yüklendiğinde otomatik kaydırmayı başlatın
+window.addEventListener("load", () => {
+    shuffleArray(cards); 
+    startAutoScroll();
+    pauseAfterLast(); 
+});
+
+// Kullanıcının kartlara tıkladığında otomatik kaydırmayı durdurun
+bookContainer.addEventListener("mousedown", stopAutoScroll);
+
+// "Prev" butonuna tıklandığında kartları sola kaydırın
+const prevButton = document.getElementById("prev");
+prevButton.addEventListener("click", () => {
+    scrollCards(-1);
+    updateAutoScroll();
+    pauseAfterLast(); 
+});
+
+// "Next" butonuna tıklandığında kartları sağa kaydırın
+const nextButton = document.getElementById("next");
+nextButton.addEventListener("click", () => {
+    scrollCards(1);
+    updateAutoScroll();
+    pauseAfterLast(); 
+});
