@@ -162,7 +162,7 @@ window.addEventListener("load", () => {
 bookContainer.addEventListener("mousedown", stopAutoScroll);
 
 // "Prev" butonuna tıklandığında kartları sola kaydırın
-const prevButton = document.getElementById("prev");
+const prevButton = document.querySelector(".best-left i");
 prevButton.addEventListener("click", () => {
     scrollCards(-1);
     updateAutoScroll();
@@ -170,7 +170,7 @@ prevButton.addEventListener("click", () => {
 });
 
 // "Next" butonuna tıklandığında kartları sağa kaydırın
-const nextButton = document.getElementById("next");
+const nextButton = document.querySelector(".best-right i");
 nextButton.addEventListener("click", () => {
     scrollCards(1);
     updateAutoScroll();
