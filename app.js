@@ -93,7 +93,8 @@ function scrollToTop() {
     });
 }
 
-const bookContainer = document.getElementById("bookContainer");
+            // * * Best Selling 
+const bookContainer = document.getElementById("bestContainer");
 const cardWidth = 218; 
 const cards = Array.from(bookContainer.getElementsByClassName("best-card"));
 const autoScrollDelay = 3000; 
@@ -151,17 +152,17 @@ function pauseAfterLast() {
     }
 }
 
-// Sayfa yüklendiğinde otomatik kaydırmayı başlatın
+// otomatik scroll
 window.addEventListener("load", () => {
     shuffleArray(cards); 
     startAutoScroll();
     pauseAfterLast(); 
 });
 
-// Kullanıcının kartlara tıkladığında otomatik kaydırmayı durdurun
+
 bookContainer.addEventListener("mousedown", stopAutoScroll);
 
-// "Prev" butonuna tıklandığında kartları sola kaydırın
+// "Prev" click
 const prevButton = document.querySelector(".best-left i");
 prevButton.addEventListener("click", () => {
     scrollCards(-1);
@@ -169,10 +170,82 @@ prevButton.addEventListener("click", () => {
     pauseAfterLast(); 
 });
 
-// "Next" butonuna tıklandığında kartları sağa kaydırın
+// "Next" click
 const nextButton = document.querySelector(".best-right i");
 nextButton.addEventListener("click", () => {
     scrollCards(1);
     updateAutoScroll();
     pauseAfterLast(); 
 });
+
+        // * *Featured This Week
+
+const prevSlideButton = document.getElementById('prevSlide');
+const nextSlideButton = document.getElementById('nextSlide');
+const slides = document.querySelectorAll('.week-slide');
+let currentSlide = 0;
+let isAnimating = false;
+
+nextSlideButton.addEventListener('click', () => {
+    if (!isAnimating) {
+        isAnimating = true;
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateSlidePosition();
+    }
+});
+
+prevSlideButton.addEventListener('click', () => {
+    if (!isAnimating) {
+        isAnimating = true;
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        updateSlidePosition();
+    }
+});
+
+function updateSlidePosition() {
+    slides.forEach((slide, index) => {
+        let offset = (index - currentSlide) * 100;
+        if (offset > 100) {
+            offset -= 100 * slides.length;
+        } else if (offset < -100) {
+            offset += 100 * slides.length;
+        }
+        
+        slide.style.transform = `translateX(${offset}%)`;
+        slide.style.pointerEvents = "none";
+        slide.style.opacity = 0;
+    });
+
+    setTimeout(() => {
+        slides[currentSlide].style.transform = `translateX(0)`;
+        slides[currentSlide].style.pointerEvents = "auto";
+        slides[currentSlide].style.opacity = 1;
+
+        setTimeout(() => {
+            isAnimating = false;
+        }, 500);
+    }, 100);
+}
+
+updateSlidePosition();
+
+const autoAdvanceInterval = 4000;
+const autoAdvance = () => {
+    if (!isAnimating) {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateSlidePosition();
+    }
+};
+
+let autoAdvanceTimer = setInterval(autoAdvance, autoAdvanceInterval);
+
+slides.forEach((slide) => {
+    slide.addEventListener('mouseenter', () => {
+        clearInterval(autoAdvanceTimer);
+    });
+
+    slide.addEventListener('mouseleave', () => {
+        autoAdvanceTimer = setInterval(autoAdvance, autoAdvanceInterval);
+    });
+});
+
