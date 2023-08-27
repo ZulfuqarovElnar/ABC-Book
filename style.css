@@ -788,6 +788,258 @@ header .nav-menu {
     color: #fff;
 }
 
+        /* * Best Selling * */
+.best-section{
+    width: 100%;
+    height: 750px;
+    padding: 95px 12px 100px;
+    background-color: #fef4f4;
+}
+.best-heading{
+    max-width: 1320px;
+    width: 100%;
+    margin: 0 auto 50px;
+}
+.best-heading h1{
+    font-size: 30px;
+    color: #1a1a1a;
+    text-align: center;
+}
+.best-body{
+    max-width: 1320px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    overflow-x: auto;
+}
+.best-flex{
+    max-width: 1240px;
+    width: 100%;
+    height: 530px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    gap: 20px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.best-flex::-webkit-scrollbar {
+    display: none;
+}
+
+.best-left, .best-right{
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.best-left i, .best-right i{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 30px;
+    color: #4c4c4c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.best-left i:hover, .best-right i:hover{
+    cursor: pointer;
+    color: #ff1616;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.book-card {
+    opacity: 0;
+    transform: translateY(20px); 
+    animation: fadeIn 0.5s ease forwards; 
+}
+            /* * Featured This Week * */
+.week-section {
+    width: 100%;
+    height: 687px;
+    padding: 120px 0 0;
+}
+.week-body{
+    max-width: 1320px;
+    width: 100%;
+    height: 567px;
+    display: flex;
+    margin: 0 auto;
+    padding: 0 12px;
+    gap: 20px;
+}
+.week-card{
+    max-width: 990px;
+    width: 100%;
+}
+.week-title{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 36px;
+}
+
+.week-title h1{
+    font-size: 30px;
+    color: #1a1a1a;
+}
+.week-title div{
+    width: 57px;
+    padding-top: 15px;
+    transition: transform all 0.3s ease-out ;
+}
+.week-title div a{
+    font-weight: 500;
+    color: #1a1a1a;
+    transition: transform all 0.3s ease-out ;
+}
+
+.week-title div:hover{
+    width: 70px;
+    cursor: pointer;
+}
+.week-title div:hover a{
+    letter-spacing: 1.7px;
+}
+.week-title div hr{
+    height: 2px;
+    color: #EEE1E0;
+    margin-top: 10px;
+    border: 1px solid #EEE1E0;
+}
+.week-sliders{
+    background-color: #ff1616;
+    height: 485px;
+    overflow: hidden;
+}
+.week-slider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.week-slides{
+    max-width: 703px;
+    width: 100%;
+    height: 457px;
+    display: flex;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+}
+.week-slide{
+    flex: 0 0 703px;
+    display: flex;
+    gap: 50px;
+    padding: 29px 0;
+    position: absolute;
+    transform: translateX(0);
+    transition: transform 0.5s ease-in-out;
+}
+.week-slide img{
+    min-height: 427px;
+}
+.week-slide > div{
+    max-width: 371px;
+    width: 100%;
+    height: 285px;
+    margin: auto 0;
+    color: #fff;
+}
+.week-slide > div h1{
+    font-size: 40px;
+    color: #fff;
+    padding-bottom: 9px;
+}
+.week-slide > div p{
+    font-size: 14px;
+    padding-bottom: 30px;
+}
+.week-slide > div span{
+    font-size: 32px;
+}
+.week-star{
+    padding-top: 9px;
+    display: flex;
+    gap: 5px;
+}
+.week-btn {
+    max-width: 185px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.week-view-btn {
+    max-width: 185px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 35px;
+    position: relative;
+    overflow: hidden;
+}
+
+.week-view-btn div {
+    max-width: 185px;
+    width: 100%;
+    height: 50px;
+    padding: 17px 39px;
+    border-radius: 30px;
+    border: 1px solid #fff;
+    margin: 0 auto;
+    color: #fff;
+    background: linear-gradient(to top, #ff1616 50%, #fff 50%);
+    background-size: 100% 200%;
+    background-position: bottom;
+    transition: background-position 0.5s ease-in-out;
+}
+
+.week-view-btn:hover div {
+    background-position: top;
+    cursor: pointer;
+    color: #ff1616;
+}
+.week-left ,.week-right{
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+.week-left i,.week-right i{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform color 0.5s ease-in-out;
+}
+.week-left i:hover,.week-right i:hover{
+    color: #fff;
+    cursor: pointer;
+}
+.week-img img{
+    max-width: 306px;
+    width: 100%;
+    object-fit: cover;
+    height: auto;
+    max-height: 563px;
+}
             /* * Join Newsletter * */
 .join-section{
     width: 100%;
@@ -797,12 +1049,11 @@ header .nav-menu {
     max-width: 1320px;
     width: 100%;
     height: 351px;
-    padding: 0 12px;
+    padding: 100px 12px 0;
     display: flex;
     justify-content: center;
     background: url(images/imagesd.png);
     margin: 0 auto;
-    padding-top: 100px;
 }
 .join-card{
     max-width: 660px;
@@ -902,89 +1153,31 @@ footer{
 .footer-mt{
     margin-top: 61px;
 }
-        /* * Best Selling * */
-.best-section{
-    width: 100%;
-    height: 750px;
-    padding: 95px 12px 100px;
-    background-color: #fef4f4;
-}
-.best-heading{
-    max-width: 1320px;
-    width: 100%;
-    margin: 0 auto 50px;
-}
-.best-heading h1{
-    font-size: 30px;
-    color: #1a1a1a;
-    text-align: center;
-}
-.best-body{
-    max-width: 1320px;
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
-    overflow-x: auto;
-}
-.best-flex{
-    max-width: 1240px;
-    width: 100%;
-    height: 530px;
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    gap: 20px;
-    overflow-x: hidden;
-    position: relative;
-}
-
-.best-flex::-webkit-scrollbar {
-    display: none;
-}
-.best-left {
-    width: 60px;
-}
-.best-right {
-    width: 60px;
-}
-.best-left, .best-right{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.best-left i, .best-right i{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 30px;
-    color: #4c4c4c;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.best-left i:hover, .best-right i:hover{
-    cursor: pointer;
-    color: #ff1616;
-}
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.book-card {
-    opacity: 0;
-    transform: translateY(20px); 
-    animation: fadeIn 0.5s ease forwards; 
-}
 
             /* * Responsive ayarlar * */
+@media (max-width:930px){
+    .week-section{
+        height: 1040px;
+    }
+    .week-card {
+        max-width: 456px;
+        width: 100%;
+    }
+    .week-sliders{
+        max-width: 456px;
+        width: 100%;
+        height: 820px;
+    }
+    .week-slides{
+        height: 820px;
+    }
+    .week-slide{
+        flex-direction: column;
+    }
+    .week-slide div h1{
+        font-size: 35px;
+    }
+}
 @media (max-width: 768px) {
     .navbar{
         flex-wrap: wrap;
@@ -1002,7 +1195,7 @@ footer{
         justify-content: center;
     }
     
-        /* * Nav-Menu Hamburger * */
+        /* * Nav-Menu Hamburger  RES * */
     header{
         background-color: #4c4c4c;
     }
@@ -1105,13 +1298,61 @@ footer{
         grid-template-columns: repeat(auto-fit, minmax(380px,1fr));
         place-items: center;
     }
+    .week-section{
+        height: 1655px;
+        overflow-y: auto;
+    }
+    .week-body{
+        flex-direction: column;
+    }
+    .week-card {
+        max-width: 540px;
+        width: 100%; 
+        margin: 0 auto;
+    }
+    .week-sliders{
+        max-width: 540px;
+        width: 100%;
+    }
+    .week-img{
+        max-width: 540px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .week-img img{
+        max-width: 540px;
+        width: 100%;
+        object-fit: cover;
+        max-height: 1007px;
+        height: 100%;
+    }
+    .week-slide img{
+        max-width: 282px;
+        width: 100%;
+        object-fit: cover;
+        min-height: 0;
+        max-height: 427px;
+        height: 100%;
+    }
+    .week-slide div{
+        width: 222px;
+    }
+    .week-slide div h1{
+        font-size: 30px;
+    }
+    
 }
 @media (max-width: 400px) {
+    .nav-link ul{
+        max-width: 290px;
+        width: 100%;
+        gap: 5px;
+    }
     .slider-card h1 {
         font-size: 35px;
     }
     .book-grid{
-        grid-template-columns: repeat(auto-fit, minmax(270px,1fr));
+        grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
     }
     /* * Join */
     .join-section{
@@ -1119,9 +1360,18 @@ footer{
     }
     .join{
         height: 440px;
-        
     }
     .join-card button{
         margin-top: 10px;
+    }
+    .footer-grid{
+        grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    }
+    .week-section{
+        height: 1400px;
+    }
+    .week-slide {
+        padding-top: 100px;
+        gap: 50px;
     }
 }
