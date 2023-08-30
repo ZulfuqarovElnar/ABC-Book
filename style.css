@@ -701,7 +701,7 @@ header .nav-menu {
     padding: 0 12px 30px;
 }
 .book-card{
-    width: 198px;
+    width: 196px;
     height: 475px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.7s ease;
@@ -1040,6 +1040,50 @@ header .nav-menu {
     height: auto;
     max-height: 563px;
 }
+
+            /* * Latest Published items * */
+.item-section {
+    width: 100%;
+    height: auto;
+    padding: 95px 0 100px;
+}
+.item-heading{
+    max-width: 1320px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 12px 40px; 
+}
+.item-heading h1{
+    font-size: 30px;
+    color: #1a1a1a;
+}
+.item-heading div{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.item-heading div a{
+    padding: 7px 24px;
+    border-radius: 20px;
+    border: 1px solid #cccccc;
+    color: #454e6d;
+    cursor: pointer;
+}
+.item-shop{
+    max-width: 1320px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto 35px;
+}
+.item-active{
+    background-color: #ff1616;
+    color: #fff !important;
+    border: 1px solid #ff1616 !important;
+}
             /* * Join Newsletter * */
 .join-section{
     width: 100%;
@@ -1176,6 +1220,12 @@ footer{
     }
     .week-slide div h1{
         font-size: 35px;
+    }
+    .item-heading{
+        flex-direction: column;
+    }
+    .item-heading h1{
+        padding-bottom: 25px;
     }
 }
 @media (max-width: 768px) {
@@ -1342,7 +1392,7 @@ footer{
     }
     
 }
-@media (max-width: 400px) {
+@media (max-width: 439px) {
     .nav-link ul{
         max-width: 290px;
         width: 100%;
@@ -1353,6 +1403,38 @@ footer{
     }
     .book-grid{
         grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    }
+    .best-left, .best-right, .week-left, .week-right{
+        display: none;
+    }
+    .week-sliders{
+        max-height: 760px;
+        height: 100%;
+    }
+    .week-slide > div{
+        padding: 0 12px;
+    }
+    .week-slide div h1{
+        font-size: 20px;
+    }
+    /* * Item */
+    .item-shop .book-body{
+        max-width: 500px;
+        width: 100%;
+        height: auto;
+    }
+    .item-shop .book-card{
+        max-width: 500px;
+        width: 100%;
+        height: auto;
+    }
+    .item-shop .book-card img{
+        max-width: 500px;
+        width: 100%;
+        height: auto;
+    }
+    .item-shop .book-card .book-review{
+        padding-bottom: 30px;
     }
     /* * Join */
     .join-section{
@@ -1370,8 +1452,5 @@ footer{
     .week-section{
         height: 1400px;
     }
-    .week-slide {
-        padding-top: 100px;
-        gap: 50px;
-    }
+    
 }

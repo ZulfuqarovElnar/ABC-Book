@@ -248,3 +248,44 @@ slides.forEach((slide) => {
         autoAdvanceTimer = setInterval(autoAdvance, autoAdvanceInterval);
     });
 });
+
+    // * Filterleme ozelgi elave edildi
+
+const itemEls = document.querySelectorAll('.item-heading div a');
+const bookContainerEl = document.querySelector('.item-shop');
+const bookOrders = {};
+
+itemEls.forEach((itemEl) => {
+    const orderKey = itemEl.textContent;
+
+    // Rastgele bir sıralama olusturub saxlamaq 
+    bookOrders[orderKey] = shuffleArray(Array.from(document.querySelectorAll('.book-body')));
+
+    itemEl.addEventListener('click', () => {
+        if (!itemEl.classList.contains('item-active')) {
+            itemEls.forEach(el => {
+                el.classList.remove('item-active');
+            });
+            
+            itemEl.classList.add('item-active');
+
+            const currentBookOrder = bookOrders[orderKey];
+
+            bookContainerEl.innerHTML = '';
+
+            currentBookOrder.forEach(bookBody => {
+                bookContainerEl.appendChild(bookBody);
+            });
+        }
+    });
+});
+
+//  Siralamayi deyisdirmek
+function shuffleArray(array) {
+    const shuffledArray = array.slice();
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+    }
+    return shuffledArray;
+}
