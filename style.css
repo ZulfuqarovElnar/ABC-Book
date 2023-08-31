@@ -418,20 +418,51 @@ header .nav-menu {
     font-size: 16px;
 }
 
-            /* * Book Category * */
-.category-section{
+            /* * About Our * */
+.our-section {
+    width: 100%;
+    height: auto;
+    padding: 100px 0;
+}
+.our-body{
+    max-width: 966px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 0 12px;
+}
+.our-body div h2{
+    font-size: 30px;
+    padding-bottom: 22px;
+    color: #1a1a1a;
+}
+.our-body div p{
+    padding-bottom: 15px;
+    line-height: 1.6rem;
+    color: #707070;
+}
+
+            /* * Book and About Category * */
+.category-section, .about-section{
     width: 100%;
     height: 350px;
     padding: 0 12px;
 }
-.category{
+.category, .about{
     max-width: 1320px;
     width: 100%;
     height: 350px;
     margin: 0 auto;
+}
+.category{
     background: no-repeat center/cover  url(images/evil-spooky-pumpkin.webp);
 }
-.category h1{
+.about{
+    background: no-repeat center/cover  url(images/h2_hero2.jpg);
+}
+.category h1, .about h1{
     font-size: 50px;
     text-align: center;
     padding: 148px 0 0;
@@ -439,7 +470,7 @@ header .nav-menu {
     font-family: "Playfair Display",sans-serif;
 }
 
-            /* * Book Filter * */
+             /* * Book Filter * */
 
 .book-section {
     width: 100%;
@@ -1194,6 +1225,7 @@ header .nav-menu {
 footer{
     width: 100%;
     height: 450px;
+    background-color: #fef4f4;
 }
 .footer-grid {
     max-width: 1320px;
